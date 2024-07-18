@@ -11,8 +11,9 @@ import (
 )
 
 func createRandomAccount(t *testing.T) Accounts { // bu unit test olarak koşMAZ çünkü "Test" prefix i YOK.
+	user := createRandomUser(t)
 	arg := CreateAccountParams{
-		Owner:    util.RandomOwner(),
+		Owner:    user.Username,
 		Balance:  util.RandomMoney(),
 		Currency: util.RandomCurrency(),
 	}
